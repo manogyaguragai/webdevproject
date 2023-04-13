@@ -1,7 +1,7 @@
 {% extends "blog/base.html" %}
 {% load tailwind_filters %}
 {% block content %}
-<div class="flex flex-col mx-5 min-w-[50em] text-center">
+<div class="mx-[50em] w-[50em] content-center align-center justify-center text-center">
     <form method="POST">
         {% csrf_token %} <!-- This is a security token to prevent cross-site request forgery -->
         <fieldset class="flex flex-col">

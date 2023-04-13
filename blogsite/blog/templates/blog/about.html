@@ -6,16 +6,18 @@
 
 <div>
 <p class="py-4">
-  This website was created by <strong> Manogya Guragai </strong> and
-  <strong> Nikhil Karki </strong> as part of the
+  <strong> Manogya Guragai </strong> and
+  <strong> Nikhil Karki </strong> made this functional webapp as part of the
   <strong> 'Web development with Python' </strong> course project.
 </p>
 
 {% if user.is_authenticated %}
   <p class="py-5 my-5 text-center"> Current User: <a href="{% url 'profile'%}"> {{ user.username }} </a> </p>
   {% else %}
-  <p class="text-center"> <a href="{% url 'login' %}"><u> Log In </u></a></p>
+  <p class="text-center"> <strong> Not logged in Currently. </strong></p>
+  <p class="text-center"> <a href="{% url 'login' %}"><u> Log In Here </u></a></p>
 </div>
+
 {% endif %}
 
 {% endblock content %}
