@@ -1,0 +1,19 @@
+{% extends 'blog/base.html' %}
+
+<div class="my-5 flex flex-row flex-wrap-reverse">
+    {% block content %}
+
+    <div class="flex flex-row min-w-[10em] flex-wrap basis-2/3 mx-5 justify-start">
+        <h1 class=" text-3xl my-3 ">{{ post.Title }}</h1>
+        <div>
+            <div class="text-sm my-1 mx-5 my-3"> <br>
+                By: {{ post.Author }} <br>
+                On: {{post.Date_Posted|date:"F d, Y"}}
+            </div>
+        </div>
+        <hr class="mx-1">
+        <p class="my-3 text-lg">{{ post.Content|safe }}</p>
+    </div>
+
+    {% endblock content %}
+</div>

@@ -1,0 +1,29 @@
+{% extends "blog/base.html" %}
+{% load tailwind_filters %}
+{% block content %}
+<div class="content-section">
+    <form method="POST">
+        {% csrf_token %} <!-- This is a security token to prevent cross-site request forgery -->
+        <fieldset class="flex flex-col">
+            <legend class="bg-slate-600 hover:bg-slate-700 p-2 my-5 w-full">
+                Log In
+            </legend>
+            <div class="text-slate-500">
+                {{ form|crispy }}
+            </div>
+        </fieldset>
+        <div>
+            <button type="submit"
+                class="border-2 rounded-xl bg-slate-600 hover:bg-slate-700 p-1 my-5 hover:animate-bounce">
+                Log In
+            </button>
+        </div>
+        <input type="submit" value="Register">
+    </form>
+    <div>
+        Don't have an account? <br>
+        <a href={% url 'register' %}>Sign Up</a>
+    </div>
+</div>
+
+{% endblock content %}

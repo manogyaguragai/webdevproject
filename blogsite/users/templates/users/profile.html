@@ -1,0 +1,16 @@
+{% extends "blog/base.html" %}
+{% block content %}
+
+<div class="w-full">
+    <img src="{{ user.profile.image.url }}" alt="image" class="rounded-full">
+    Username :
+    <h2 class="m-5 p-0 font-extrabold">
+        {{ user.username }}
+    </h2>
+    Email Address :
+    <p class="m-5 p-0 font-bold">
+        {{ user.email }}
+    </p>
+</div>
+
+{% endblock content %}
