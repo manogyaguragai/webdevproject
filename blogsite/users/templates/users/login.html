@@ -1,11 +1,11 @@
 {% extends "blog/base.html" %}
 {% load tailwind_filters %}
 {% block content %}
-<div class="content-section">
+<div class="flex flex-col mx-5 min-w-[50em] text-center">
     <form method="POST">
         {% csrf_token %} <!-- This is a security token to prevent cross-site request forgery -->
         <fieldset class="flex flex-col">
-            <legend class="bg-slate-600 hover:bg-slate-700 p-2 my-5 w-full">
+            <legend class="bg-[#E4DCCF] p-2 my-5 w-full text-3xl font-bold">
                 Log In
             </legend>
             <div class="text-slate-500">
@@ -14,7 +14,7 @@
         </fieldset>
         <div>
             <button type="submit"
-                class="border-2 rounded-xl bg-slate-600 hover:bg-slate-700 p-1 my-5 hover:animate-bounce">
+                class="px-3 py-3 bg-blue-500 mx-1 my-2 rounded-xl hover:bg-blue-600 text-white">
                 Log In
             </button>
         </div>
@@ -22,7 +22,7 @@
     </form>
     <div>
         Don't have an account? <br>
-        <a href={% url 'register' %}>Sign Up</a>
+        <a href={% url 'register' %}><u>Sign Up</u></a>
     </div>
 </div>
 

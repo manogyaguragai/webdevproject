@@ -2,8 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,61 +12,53 @@
     <title>Blog</title>
     {%endif%}
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="{% static 'favicon.png' %}" type="image/png">
-</head>
+    <link
+      rel="shortcut icon"
+      href="{% static 'favicon.png' %}"
+      type="image/png"
+    />
+  </head>
 
-<body class="bg-[#E4DCCF] text-[#002B5B]">
-    <nav class=" bg-[#F9F5EB] px-5 py-3 flex-nowrap text-[#002B5B]">
-        <ul>
-            <div class="flex justify-start">
-                <li class="px-3">
-                    <a href="{% url 'blog-home' %}"> Blog </a>
-                </li>
-                <li class="px-3">
-                    <a href="{% url 'blog-home' %}"> Home </a>
-                </li>
-                <li class="px-3">
-                    <a href="{% url 'blog-about' %}">About</a>
-                </li>
-            </div>
-            <div class="flex justify-end">
-                {% if user.is_authenticated %}
-                <li class="px-3">
-                    <a href="{% url 'logout'%}">
-                        Logout
-                    </a>
-                </li>
+  <body class="bg-[#E4DCCF] text-[#002B5B]">
+    <nav class="bg-[#F9F5EB] px-5 py-3 flex-nowrap text-[#002B5B]">
+      <ul>
+        <div class="flex justify-start">
+          <li class="px-3">
+            <a href="{% url 'blog-home' %}"> Blog </a>
+          </li>
+          <li class="px-3">
+            <a href="{% url 'blog-home' %}"> Home </a>
+          </li>
+          <li class="px-3">
+            <a href="{% url 'blog-about' %}">About</a>
+          </li>
+        </div>
+        <div class="flex justify-end">
+          {% if user.is_authenticated %}
+          <li class="px-3">
+            <a href="{% url 'logout'%}"> Logout </a>
+          </li>
 
-                <li class="px-3">
-                    <a href="{% url 'profile'%}">
-                        Profile
-                    </a>
-                </li>
-                {% else %}
-                <li class="px-3">
-                    <a href="{% url 'login'%}">
-                        Login
-                    </a>
-                </li>
-                <li class="px-3">
-                    <a href="{% url 'register'%}"> Register </a>
-                </li>
-                {% endif %}
-            </div>
-        </ul>
+          <li class="px-3">
+            <a href="{% url 'profile'%}"> Profile </a>
+          </li>
+          {% else %}
+          <li class="px-3">
+            <a href="{% url 'login'%}"> Login </a>
+          </li>
+          <li class="px-3">
+            <a href="{% url 'register'%}"> Register </a>
+          </li>
+          {% endif %}
+        </div>
+      </ul>
     </nav>
     <div class="my-5 flex flex-row flex-wrap-reverse">
-        <div class="flex flex-row min-w-[10em] flex-wrap mx-5 justify-center">
-            {% if messages %}
-            {% for message in messages %}
-            <div class="bg-blue-600">
-                {{ message }}
-            </div>
-            {% endfor %}
-            {% endif %}
-            {% block content %} {% endblock %}
-        </div>
+      <div class="flex flex-row min-w-[10em] flex-wrap mx-5 justify-center">
+        {% if messages %} {% for message in messages %}
+        <div class="bg-blue-600 max-w-8 max-h-8">{{ message }}</div>
+        {% endfor %} {% endif %} {% block content %} {% endblock %}
+      </div>
     </div>
-</body>
-
+  </body>
 </html>
