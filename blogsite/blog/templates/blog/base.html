@@ -22,14 +22,14 @@
   <body class="bg-[#E4DCCF] text-[#002B5B]">
     <nav class="bg-[#F9F5EB] px-5 py-3 flex-nowrap text-[#002B5B]">
       <ul>
-        <div class="flex justify-start">
-          <li class="px-3">
+        <div class="flex justify-start text-2xl">
+          <li class="px-3 hover:-translate-y-1 hover:scale-105">
             <a href="{% url 'blog-home' %}"> Blog </a>
           </li>
-          <li class="px-3">
+          <li class="px-3 hover:-translate-y-1 hover:scale-105">
             <a href="{% url 'blog-home' %}"> Home </a>
           </li>
-          <li class="px-3">
+          <li class="px-3 hover:-translate-y-1 hover:scale-105">
             <a href="{% url 'blog-about' %}">About</a>
           </li>
         </div>
@@ -43,10 +43,10 @@
             <a href="{% url 'profile'%}"> Profile </a>
           </li>
           {% else %}
-          <li class="px-3">
+          <li class="px-3 hover:-translate-y-1 hover:scale-105 text-2xl">
             <a href="{% url 'login'%}"> Login </a>
           </li>
-          <li class="px-3">
+          <li class="px-3 hover:-translate-y-1 hover:scale-105 text-2xl">
             <a href="{% url 'register'%}"> Register </a>
           </li>
           {% endif %}

@@ -4,12 +4,12 @@
     {% block content %}
 
     <div class="flex flex-row min-w-[10em] flex-wrap mx-8 justify-center">
-        <h1 class="text-3xl text-center w-full content-center">{{ post.Title }}</h1>
-            <div class="w-full text-center text-sm mx-5"> <br>
+        <h1 class="text-5xl text-center w-full content-center">{{ post.Title }}</h1>
+            <div class="w-full text-center text-base mx-5"> <br>
                 By: {{ post.Author }} <br>
                 On: {{post.Date_Posted|date:"F d, Y"}}
             </div>
-        <div class="w-[80%] text-justify">
+        <div class="w-[85%] text-justify text-lg">
         <p class="my-1 max-w-[50em] text-lg">{{ post.Content|safe }}</p>
     </div>
     </div>  
